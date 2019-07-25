@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/group_chat.dart';
-import 'widgets/text_message.dart';
+import 'screens/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: GroupChat(),
+      home: HomePage(),
     );
   }
 }

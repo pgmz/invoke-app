@@ -25,7 +25,18 @@ class _GroupChatState extends State<GroupChat> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+          ),
           title: Text("group chat"),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.history),
+            ),
+            IconButton(
+              icon: Icon(Icons.more_horiz),
+            )
+          ],
         ),
         body: Column(
           children: <Widget>[
