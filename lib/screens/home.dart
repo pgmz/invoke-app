@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invoker/widgets/invoke_group_item.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -6,49 +7,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  void _incrementCounter() {
-    setState(() {});
-  }
+  List<InvokeGroupItem> invokeGroups = [
+    InvokeGroupItem("My Group 1"),
+    InvokeGroupItem("My Group 2"),
+    InvokeGroupItem("My Group 3")
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text("casita"),
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'Here show something',
-                ),
-              ],
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          Flexible(
+            child: ListView(
+              padding: new EdgeInsets.all(8.0),
+              children: invokeGroups,
             ),
           ),
-          floatingActionButton: FloatingActionButton(
-            tooltip: 'Invoke',
-            child: Icon(Icons.plus_one),
-          ),
-          bottomNavigationBar: TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.home),
-              ),
-              Tab(
-                icon: Icon(Icons.map),
-              )
-            ],
-            labelColor: Colors.black,
-            unselectedLabelColor: Colors.grey,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicatorPadding: EdgeInsets.all(5.0),
-            indicatorColor: Colors.black,
-          ),
-        ),
+        ],
       ),
     );
   }

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 
 class MessageBox extends StatelessWidget {
 
-  TextEditingController textEditingController = TextEditingController();
-
-  Function _buttonCallback;
+  final TextEditingController textEditingController = TextEditingController();
+  final Function _buttonCallback;
   MessageBox(this._buttonCallback);
 
   @override

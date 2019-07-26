@@ -41,11 +41,12 @@ class _GroupChatState extends State<GroupChat> {
         body: Column(
           children: <Widget>[
             Flexible(
-                child: ListView.builder(
-              padding: new EdgeInsets.all(8.0),
-              itemBuilder: (_, int index) => _textMsgList[index],
-              itemCount: _textMsgList.length,
-            )),
+              child: ListView.builder(
+                padding: new EdgeInsets.all(8.0),
+                itemBuilder: (_, int index) => _textMsgList[index],
+                itemCount: _textMsgList.length,
+              ),
+            ),
             MessageBox(addTextMessage)
           ],
         ));

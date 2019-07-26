@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TextMessage extends StatelessWidget {
 
-  String message;
+  final String message;
 
   TextMessage(this.message);
 
