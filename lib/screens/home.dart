@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invoker/widgets/invoke_group_item.dart';
+import 'package:invoker/screens/group_chat.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,11 +8,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<InvokeGroupItem> invokeGroups = [
-    InvokeGroupItem("My Group 1"),
-    InvokeGroupItem("My Group 2"),
-    InvokeGroupItem("My Group 3")
-  ];
+  List<InvokeGroupItem> invokeGroups = [];
+
+  goToGroupChat(BuildContext context, String groupChatName) {
+    Navigator.pushNamed(context, '/groupChat', arguments: GroupChatArguments(groupChatName));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,14 @@ class _HomePageState extends State<HomePage> {
           Flexible(
             child: ListView(
               padding: new EdgeInsets.all(8.0),
-              children: invokeGroups,
+              children: [
+                InvokeGroupItem("My Group 1", "assets/images/hiking_group.jpg",
+                    goToGroupChat),
+                InvokeGroupItem("My Group 2", "assets/images/music_group.jpg",
+                    goToGroupChat),
+                InvokeGroupItem("My Group 3", "assets/images/pizza_group.jpg",
+                    goToGroupChat)
+              ],
             ),
           ),
         ],
