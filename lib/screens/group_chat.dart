@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:invoker/widgets/text_message.dart';
 import 'package:invoker/widgets/message_box.dart';
-
-class GroupChatArguments {
-  final String groupChatName;
-
-  GroupChatArguments(this.groupChatName);
-}
+import 'package:invoker/util/group_chat_utils.dart';
 
 class GroupChat extends StatefulWidget {
   @override

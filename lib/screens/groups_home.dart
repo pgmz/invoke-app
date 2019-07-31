@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:invoker/widgets/invoke_group_item.dart';
-import 'package:invoker/screens/group_chat.dart';
+import 'package:invoker/util/group_chat_utils.dart';
+import 'package:invoker/widgets/groups_home_drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,12 +12,31 @@ class _HomePageState extends State<HomePage> {
   List<InvokeGroupItem> invokeGroups = [];
 
   goToGroupChat(BuildContext context, String groupChatName) {
-    Navigator.pushNamed(context, '/groupChat', arguments: GroupChatArguments(groupChatName));
+    Navigator.pushNamed(context, '/groupChat',
+        arguments: GroupChatArguments(groupChatName));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: new Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                });
+          },
+        ),
+        title: Text("My Groups"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+          ),
+        ],
+      ),
+      drawer: HomePageDrawer(),
       body: Column(
         children: <Widget>[
           Flexible(
@@ -33,6 +53,9 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Text("New Group!"),
       ),
     );
   }

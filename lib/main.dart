@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
+import 'screens/groups_home.dart';
 import 'screens/group_chat.dart';
 
 void main() => runApp(MyApp());
