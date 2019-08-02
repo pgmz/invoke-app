@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/groups_home.dart';
 import 'screens/group_chat.dart';
+import 'screens/new_group.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: NewGroup(),
       routes: <String, WidgetBuilder>{
         '/groupsHome': (BuildContext context) => new HomePage(),
         '/groupChat': (BuildContext context) => new GroupChat()
